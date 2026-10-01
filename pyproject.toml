@@ -9,7 +9,9 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "aiogram>=3.31.0",
+    "markdown>=3.11",
     "pygithub>=2.10.0",
     "python-dotenv>=1.2.3",
     "ruff>=0.16.9",
+    "weasyprint>=70.0",
 ]

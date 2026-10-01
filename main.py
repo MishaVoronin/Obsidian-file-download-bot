@@ -1,10 +1,11 @@
 import asyncio
 import logging
 import os
-from dotenv import load_dotenv
-from aiogram import Bot, Dispatcher
 
-import src.bot 
+from aiogram import Bot, Dispatcher
+from dotenv import load_dotenv
+
+import src.bot
 
 load_dotenv()
 
@@ -14,9 +15,9 @@ dp = Dispatcher()
 dp.include_router(src.bot.router)
 
 logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
+
 
 async def main() -> None:
     try:
@@ -24,6 +25,6 @@ async def main() -> None:
     finally:
         await bot.session.close()
 
+
 if __name__ == "__main__":
     asyncio.run(main())
-
