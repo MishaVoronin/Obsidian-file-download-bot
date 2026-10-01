@@ -1,18 +1,17 @@
 import asyncio
 import logging
-import logging
 import os
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
 
-import src.bot as bot
+import src.bot 
 
 load_dotenv()
 
 bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher()
 
-dp.include_router(bot.router)
+dp.include_router(src.bot.router)
 
 logging.basicConfig(
     level=logging.INFO,
